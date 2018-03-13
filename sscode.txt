@@ -1,0 +1,53 @@
+//smart street light system
+int IR1=2;
+int IR2=3;
+int IR3=4;
+
+int l1=5;
+int l2=6;
+int l3=7;
+
+int t1=0;
+int t2=0;
+int t3=0;
+void setup()
+{
+  pinMode(l1,OUTPUT);
+  pinMode(l2,OUTPUT);
+  pinMode(l3,OUTPUT);
+ 
+  pinMode(IR1,INPUT);
+  pinMode(IR2,INPUT);
+  pinMode(IR3,INPUT);
+  
+}
+
+void loop()
+{
+ t1 = digitalRead(IR1);
+ t2 = digitalRead(IR2);
+  t3 = digitalRead(IR3);
+  
+  if (t1==1)
+   {
+     digitalWrite(l1, LOW);
+     digitalWrite(l2, HIGH);
+     digitalWrite(l3, LOW);
+   }
+  if (t2==1)
+   {
+     digitalWrite(l1, LOW);
+     digitalWrite(l2, LOW);
+     digitalWrite(l3, HIGH);
+   }   
+  if (t3==1)
+   {
+     digitalWrite(l1, HIGH);
+     digitalWrite(l2, LOW);
+     digitalWrite(l3, LOW);
+    } 
+else
+{ 
+digitalWrite(l1, LOW);
+digitalWrite(l2, LOW);
+digitalWrite(l3, LOW); } }
